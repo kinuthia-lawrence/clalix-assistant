@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.clalix.clalixassistant.controllers.MainController"
+            stylesheets="@../styles/styles.css"
+            style="-fx-padding: 24;">
+    <top>
+        <HBox spacing="16" styleClass="toolbar fancy-toolbar">
+            <ImageView fx:id="logoImage" fitHeight="32" fitWidth="32" styleClass="logo"/>
+            <Label text="Clalix Assistant" styleClass="app-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <HBox fx:id="globalSearch" styleClass="search-bar"/>
+            <Button fx:id="settingsButton" text="⚙" styleClass="icon-button">
+                <tooltip>
+                    <Tooltip text="Settings"/>
+                </tooltip>
+            </Button>
+        </HBox>
+    </top>
+    <center>
+        <TabPane fx:id="mainTabPane" styleClass="main-tabs">
+            <Tab text="Chat" fx:id="chatTab" styleClass="main-tab"/>
+            <Tab text="Tasks" fx:id="tasksTab" styleClass="main-tab"/>
+            <Tab text="Notes" fx:id="notesTab" styleClass="main-tab"/>
+        </TabPane>
+    </center>
+    <bottom>
+        <HBox spacing="16" styleClass="status-bar fancy-status">
+            <Label fx:id="statusLabel" text="🟢 Connected" styleClass="status-label"/>
+            <Label fx:id="lastSavedLabel" text="Last saved: --" styleClass="meta-label"/>
+            <Label fx:id="progressSpinner" text="⏳" visible="false" styleClass="spinner-label"/>
+        </HBox>
+    </bottom>
+</BorderPane>

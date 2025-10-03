@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.clalix.clalixassistant.controllers.NotesTabController"
+            stylesheets="@../styles/styles.css">
+    <left>
+        <VBox spacing="8">
+            <padding>
+                <Insets top="10" right="15" bottom="10" left="15"/>
+            </padding>
+            <TextArea fx:id="notesInput" promptText="Paste notes or transcript here..." prefRowCount="16" wrapText="true"/>
+            <HBox spacing="8">
+                <Button fx:id="summarizeButton" text="Summarize"/>
+                <ChoiceBox fx:id="modeChoice"/>
+                <Button fx:id="exportButton" text="Export"/>
+                <Button fx:id="copyButton" text="Copy"/>
+                <Button fx:id="highlightButton" text="Highlight"/>
+            </HBox>
+        </VBox>
+    </left>
+    <center>
+        <VBox spacing="8">
+            <padding>
+                <Insets top="10" right="15" bottom="10" left="15"/>
+            </padding>
+            <TextArea fx:id="summaryOutput" promptText="Summary will appear here..." editable="false" wrapText="true"/>
+            <Label fx:id="summaryMeta" text="Summary length: --"/>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.Tooltip?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.clalix.clalixassistant.controllers.ChatTabController"
+            stylesheets="@../styles/styles.css">
+    <top>
+        <HBox spacing="12" styleClass="chat-toolbar fancy-chat-toolbar">
+            <ImageView fx:id="chatLogo" fitHeight="28" fitWidth="28" styleClass="chat-logo"/>
+            <Label text="Chat" styleClass="chat-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="profileButton" text="👤" styleClass="icon-button">
+                <tooltip>
+                    <Tooltip text="Profile"/>
+                </tooltip>
+            </Button>
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="0" styleClass="chat-center">
+            <ListView fx:id="messagesList" styleClass="chat-list" prefHeight="420"/>
+            <HBox styleClass="typing-indicator" visible="false" fx:id="typingIndicator">
+                <Label text="..."/>
+            </HBox>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox spacing="14" styleClass="chat-input-bar padded" alignment="CENTER_LEFT">
+            <VBox spacing="8" alignment="CENTER_LEFT">
+                <Button fx:id="attachButton" text="📎" styleClass="icon-button">
+                    <tooltip>
+                        <Tooltip text="Attach file"/>
+                    </tooltip>
+                </Button>
+                <Button fx:id="emojiButton" text="😊" styleClass="icon-button">
+                    <tooltip>
+                        <Tooltip text="Insert emoji"/>
+                    </tooltip>
+                </Button>
+            </VBox>
+            <TextArea fx:id="inputArea" promptText="Type your message..." styleClass="chat-input" prefRowCount="1" wrapText="true" HBox.hgrow="ALWAYS"/>
+            <VBox spacing="8" alignment="CENTER_RIGHT">
+                <Button fx:id="sendButton" text="Send" styleClass="send-button">
+                    <tooltip>
+                        <Tooltip text="Send (Enter)"/>
+                    </tooltip>
+                </Button>
+                <Button fx:id="suggestButton" text="AI Suggest" styleClass="suggest-button">
+                    <tooltip>
+                        <Tooltip text="Get AI suggestion"/>
+                    </tooltip>
+                </Button>
+            </VBox>
+        </HBox>
+    </bottom>
+</BorderPane>

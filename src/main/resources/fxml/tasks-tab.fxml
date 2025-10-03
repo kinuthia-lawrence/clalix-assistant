@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.clalix.clalixassistant.controllers.TasksTabController"
+            stylesheets="@../styles/styles.css">
+    <top>
+        <HBox spacing="8">
+            <padding>
+                <Insets top="10" right="15" bottom="10" left="15"/>
+            </padding>
+            <TextField fx:id="titleField" promptText="Task Title"/>
+            <DatePicker fx:id="deadlinePicker"/>
+            <ComboBox fx:id="priorityBox" promptText="Priority"/>
+            <Button fx:id="addTaskButton" text="Add Task"/>
+        </HBox>
+    </top>
+    <center>
+        <TableView fx:id="tasksTable">
+            <columns>
+                <TableColumn fx:id="titleColumn" text="Title"/>
+                <TableColumn fx:id="deadlineColumn" text="Deadline"/>
+                <TableColumn fx:id="priorityColumn" text="Priority"/>
+                <TableColumn fx:id="statusColumn" text="Status"/>
+                <TableColumn fx:id="actionsColumn" text="Actions"/>
+            </columns>
+        </TableView>
+    </center>
+    <right>
+        <VBox fx:id="previewPanel" spacing="8">
+            <padding>
+                <Insets top="10" right="15" bottom="10" left="15"/>
+            </padding>
+        </VBox>
+    </right>
+</BorderPane>
